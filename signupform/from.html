@@ -4,54 +4,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up form</title>
+    <title>Vendor Registration - Multi-Vendor Store</title>
     <link rel="stylesheet" href="../style/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <form class="container" action="">
 
-        <img class="img" src="../images/dog.jpg" alt="image">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-store"></i>
+            <span>MarketHub</span>
+        </div>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="#">Sellers</a>
+            <a href="#">Help</a>
+        </nav>
+    </header>
 
-        <div class="from">
-            <div class="text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim labore laboriosam saepe asperiores.
-                    Minus
-                    impedit deserunt quam eius suscipit quisquam ipsa voluptatem, optio quod corporis? Excepturi sint ex
-                    recusandae. Adipisci!
-                    Similique, possimus sed magnam libero fugiat tempora nulla impedit nesciunt est ipsum tenetur,
-                    error,
-                    officiis consequatur deleniti tempore unde voluptas veritatis. Blanditiis tempora, itaque esse
-                    quibusdam
-                    eum quas aspernatur animi.</p>
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Become a Seller on MarketHub</h1>
+            <p>Join thousands of vendors and reach millions of customers worldwide. Start selling today!</p>
+        </div>
+    </section>
+
+    <!-- Main Form -->
+    <main class="main-container">
+        <div class="progress-bar">
+            <div class="step active" data-step="1">
+                <div class="step-circle">1</div>
+                <span>Personal Info</span>
             </div>
-            <div class="form_portion">
-                <label for="first_name">First Name:</label>
-                <input type="text" id="first_name" name="first_name">
-                <label for="last_name">Last Name:</label>
-                <input type="text" id="last_name" name="last_name">
-
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-
-                <label for="phone">Phone number:</label>
-                <input type="tel" id="phone" name="phone">
-
-                <br>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required minlength="6">
-
-                <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required minlength="6">
+            <div class="step-line"></div>
+            <div class="step" data-step="2">
+                <div class="step-circle">2</div>
+                <span>Store Details</span>
             </div>
-            <div class="button_portion">
-                <button type="submit">Create Account</button>
-                <h3>Already have an account? <a href="#">Log in</a></h3>
+            <div class="step-line"></div>
+            <div class="step" data-step="3">
+                <div class="step-circle">3</div>
+                <span>Business Info</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" data-step="4">
+                <div class="step-circle">4</div>
+                <span>Confirmation</span>
             </div>
         </div>
-    </form>
+
+        <form class="vendor-form" action="#" method="post" enctype="multipart/form-data">
+
+            <!-- Section 1: Personal Information -->
+            <fieldset class="form-section">
+                <legend><i class="fas fa-user"></i> Personal Information</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="first_name">First Name <span class="required">*</span></label>
+                        <input type="text" id="first_name" name="first_name" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name <span class="required">*</span></label>
+                        <input type="text" id="last_name" name="last_name" placeholder="Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <div class="input-icon">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password <span class="required">*</span></label>
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Min 8 characters" required minlength="8">
+                        </div>
+                        <small class="hint">Must contain at least 8 characters, one uppercase and one number</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password <span class="required">*</span></label>
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password" required minlength="8">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Section 2: Store Information -->
+            <fieldset class="form-section">
+                <legend><i class="fas fa-store-alt"></i> Store Information</legend>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="store_name">Store Name <span class="required">*</span></label>
+                        <input type="text" id="store_name" name="store_name" placeholder="My Awesome Store" required>
+                        <small class="hint">This will be displayed as your shop name on the marketplace</small>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="store_description">Store Description <span class="required">*</span></label>
+                        <textarea id="store_description" name="store_description" rows="4" placeholder="Tell customers what your store offers..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="store_category">Primary Category <span class="required">*</span></label>
+                        <select id="store_category" name="store_category" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="electronics">Electronics & Gadgets</option>
+                            <option value="fashion">Fashion & Apparel</option>
+                            <option value="home">Home & Garden</option>
+                            <option value="beauty">Beauty & Health</option>
+                            <option value="food">Food & Beverages</option>
+                            <option value="sports">Sports & Outdoors</option>
+                            <option value="books">Books & Stationery</option>
+                            <option value="toys">Toys & Games</option>
+                            <option value="automotive">Automotive</option>
+                            <option value="handmade">Handmade & Crafts</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="store_type">Business Type <span class="required">*</span></label>
+                        <select id="store_type" name="store_type" required>
+                            <option value="" disabled selected>Select business type</option>
+                            <option value="individual">Individual / Sole Proprietor</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="llc">LLC</option>
+                            <option value="corporation">Corporation</option>
+                            <option value="nonprofit">Non-Profit</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="store_logo">Store Logo</label>
+                        <div class="file-upload">
+                            <input type="file" id="store_logo" name="store_logo" accept="image/*">
+                            <div class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Upload Logo (PNG, JPG - Max 2MB)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="store_banner">Store Banner</label>
+                        <div class="file-upload">
+                            <input type="file" id="store_banner" name="store_banner" accept="image/*">
+                            <div class="file-upload-label">
+                                <i class="fas fa-image"></i>
+                                <span>Upload Banner (PNG, JPG - Max 5MB)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Section 3: Business & Address -->
+            <fieldset class="form-section">
+                <legend><i class="fas fa-building"></i> Business & Address</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="business_reg">Business Registration No.</label>
+                        <input type="text" id="business_reg" name="business_reg" placeholder="e.g., BR-123456">
+                    </div>
+                    <div class="form-group">
+                        <label for="tax_id">Tax ID / VAT Number</label>
+                        <input type="text" id="tax_id" name="tax_id" placeholder="e.g., XX-XXXXXXX">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="street_address">Street Address <span class="required">*</span></label>
+                        <input type="text" id="street_address" name="street_address" placeholder="123 Main Street, Suite 100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City <span class="required">*</span></label>
+                        <input type="text" id="city" name="city" placeholder="New York" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State / Province <span class="required">*</span></label>
+                        <input type="text" id="state" name="state" placeholder="NY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP / Postal Code <span class="required">*</span></label>
+                        <input type="text" id="zip" name="zip" placeholder="10001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country <span class="required">*</span></label>
+                        <select id="country" name="country" required>
+                            <option value="" disabled selected>Select country</option>
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="ca">Canada</option>
+                            <option value="au">Australia</option>
+                            <option value="de">Germany</option>
+                            <option value="fr">France</option>
+                            <option value="in">India</option>
+                            <option value="pk">Pakistan</option>
+                            <option value="bd">Bangladesh</option>
+                            <option value="ae">UAE</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Section 4: Payment Information -->
+            <fieldset class="form-section">
+                <legend><i class="fas fa-credit-card"></i> Payment Information</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="bank_name">Bank Name <span class="required">*</span></label>
+                        <input type="text" id="bank_name" name="bank_name" placeholder="e.g., Chase Bank" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="account_holder">Account Holder Name <span class="required">*</span></label>
+                        <input type="text" id="account_holder" name="account_holder" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="account_number">Account Number <span class="required">*</span></label>
+                        <div class="input-icon">
+                            <i class="fas fa-university"></i>
+                            <input type="text" id="account_number" name="account_number" placeholder="XXXX-XXXX-XXXX" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="routing_number">Routing / IBAN Number <span class="required">*</span></label>
+                        <div class="input-icon">
+                            <i class="fas fa-hashtag"></i>
+                            <input type="text" id="routing_number" name="routing_number" placeholder="XXXX-XXXX" required>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Preferred Payout Method</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="payout_method" value="bank" checked>
+                                <span class="radio-custom"></span>
+                                <i class="fas fa-university"></i> Bank Transfer
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payout_method" value="paypal">
+                                <span class="radio-custom"></span>
+                                <i class="fab fa-paypal"></i> PayPal
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payout_method" value="stripe">
+                                <span class="radio-custom"></span>
+                                <i class="fab fa-stripe-s"></i> Stripe
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Terms & Submit -->
+            <div class="form-section terms-section">
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="terms" required>
+                        <span class="checkbox-custom"></span>
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Seller Agreement</a> <span class="required">*</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="privacy" required>
+                        <span class="checkbox-custom"></span>
+                        I have read and accept the <a href="#">Privacy Policy</a> <span class="required">*</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="newsletter">
+                        <span class="checkbox-custom"></span>
+                        Subscribe to seller newsletter and marketplace updates
+                    </label>
+                </div>
+
+                <div class="submit-area">
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-rocket"></i> Register as Vendor
+                    </button>
+                    <p class="login-link">Already have a seller account? <a href="#">Log in here</a></p>
+                </div>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4><i class="fas fa-store"></i> MarketHub</h4>
+                <p>The ultimate multi-vendor marketplace platform connecting sellers with customers worldwide.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#">Seller Guidelines</a>
+                <a href="#">Commission Rates</a>
+                <a href="#">Help Center</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> support@markethub.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MarketHub. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 
